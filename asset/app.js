@@ -33,21 +33,30 @@ let total = 0.21 * distanza
 
 // clacolo il prezzo del biglietto secondo le variabili impostate differenziando i casi
 
+//caso in cui ci sia un dato non valido
 if (isNaN(userAge)== true || isNaN(distanza)== true) {
     alert ("Informazioni non valide, controlla e ripeti l'operazione");
+//caso minorenne
 } else if (userAge < 18){
     var price = (total - (total * 0.2 ) );
-    console.log(price)
+//caso over 65
 } else if (userAge > 65) {
     var price = (total - (total * 0.4) );
     console.log(price)
+//tutti gli altri casi 
 } else {
     var price = total;
     console.log(price)
 }
 
-price = Number(price.toFixed(2));
-console.log(price)
+//converti stringa in numero
+
+
 //stampa in html il risultato
- 
-document.getElementById('prezzo_biglietto').innerHTML = ` Il prezzo del biglietto è ${price} &euro;. Buon Viaggio!`
+
+if (price == undefined ) {
+    document.getElementById('prezzo_biglietto').innerHTML = `OPS. Qualcosa è andato storto. Riprova!`
+} else {
+    price = Number(price.toFixed(2));
+    document.getElementById('prezzo_biglietto').innerHTML = ` Il prezzo del biglietto è ${price} &euro;. Buon Viaggio!` 
+}

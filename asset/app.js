@@ -15,6 +15,7 @@ if (isNaN(distanza)) {
     alert("Perfavore, inserisci un numero valido");
 } else {
     alert("Grazie per aver inserito l'informazione");
+    document.getElementById("distance").innerHTML = `${distanza} Km`
 }
 
 //chiedo età del passeggero e ne imposto la variabile
@@ -26,6 +27,7 @@ if (isNaN(userAge)) {
     alert("Perfavore, inserisci un numero valido")
 } else {
     alert("Grazie per aver inserito l'informazione")
+    document.getElementById('age').innerHTML = `${userAge} anni`
 }
 
 // calcolo il prezzo base del biglietto dati i chilometri
@@ -42,11 +44,9 @@ if (isNaN(userAge)== true || isNaN(distanza)== true) {
 //caso over 65
 } else if (userAge > 65) {
     var price = (total - (total * 0.4) );
-    console.log(price)
 //tutti gli altri casi 
 } else {
     var price = total;
-    console.log(price)
 }
 
 
@@ -59,5 +59,5 @@ if (price == undefined ) {
     //converti stringa in numero
     price = Number(price.toFixed(2));
     //stampa prezzo biglietto
-    document.getElementById('prezzo_biglietto').innerHTML = ` Il prezzo del biglietto è ${price} &euro;. Buon Viaggio!` 
+    document.getElementById('prezzo_biglietto').innerHTML = `${price} &euro;` 
 }

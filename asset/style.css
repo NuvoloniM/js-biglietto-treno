@@ -23,5 +23,22 @@ body {
 }
 
 .hero h1 {
-  font-size: 4em;
+  font-size: 3em;
+}
+
+#distance,
+#age,
+#prezzo_biglietto {
+  font-size: 2em;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.bg_green {
+  background-color: green;
+}
+
+.greetings {
+  font-weight: bold;
+  font-style: italic;
 }

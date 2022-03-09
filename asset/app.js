@@ -36,19 +36,21 @@ let total = 0.21 * distanza
 // clacolo il prezzo del biglietto secondo le variabili impostate differenziando i casi
 
 //caso in cui ci sia un dato non valido
+
 if (isNaN(userAge)== true || isNaN(distanza)== true) {
     alert ("Informazioni non valide, controlla e ripeti l'operazione");
 //caso minorenne
 } else if (userAge < 18){
-    var price = (total - (total * 0.2 ) );
+    x = (total - (total * 0.2 ) );
 //caso over 65
 } else if (userAge > 65) {
-    var price = (total - (total * 0.4) );
+     x = (total - (total * 0.4) );
 //tutti gli altri casi 
 } else {
-    var price = total;
+    x = total;
 }
 
+let price = x;
 
 //stampa in html il risultato
 

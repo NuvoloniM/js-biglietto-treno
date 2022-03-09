@@ -49,14 +49,15 @@ if (isNaN(userAge)== true || isNaN(distanza)== true) {
     console.log(price)
 }
 
-//converti stringa in numero
-
 
 //stampa in html il risultato
 
 if (price == undefined ) {
+    //stampa messaggio di errore
     document.getElementById('prezzo_biglietto').innerHTML = `OPS. Qualcosa è andato storto. Riprova!`
 } else {
+    //converti stringa in numero
     price = Number(price.toFixed(2));
+    //stampa prezzo biglietto
     document.getElementById('prezzo_biglietto').innerHTML = ` Il prezzo del biglietto è ${price} &euro;. Buon Viaggio!` 
 }

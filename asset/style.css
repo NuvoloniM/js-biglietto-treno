@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* General */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Header */
+#main_logo {
+  color: green;
+  font-size: 30px;
+  font-style: italic;
+}
+
+/* Main */
+.hero {
+  height: 50vh;
+  background-image: url(./img/trenitalia_hero_2x.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+}
+
+.hero h1 {
+  font-size: 4em;
+}

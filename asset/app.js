@@ -9,12 +9,12 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 //chiedo i chilometri da percorrere e ne imposto la variabile
 
 let distanza = prompt( "Perfavore, inserisci i chilometri che vuoi percorrere" );
-
+console.log(distanza)
 // controllo che l'informazione sia valida
 if (isNaN(distanza)) {
-    alert("Perfavore, inserisci un numero valido")
+    alert("Perfavore, inserisci un numero valido");
 } else {
-    alert("Grazie per aver inserito l'informazione")
+    alert("Grazie per aver inserito l'informazione");
 }
 
 //chiedo età del passeggero e ne imposto la variabile
@@ -28,5 +28,26 @@ if (isNaN(userAge)) {
     alert("Grazie per aver inserito l'informazione")
 }
 
+// calcolo il prezzo base del biglietto dati i chilometri
+let total = 0.21 * distanza
+
 // clacolo il prezzo del biglietto secondo le variabili impostate differenziando i casi
 
+if (isNaN(userAge)== true || isNaN(distanza)== true) {
+    alert ("Informazioni non valide, controlla e ripeti l'operazione");
+} else if (userAge < 18){
+    var price = (total - (total * 0.2 ) );
+    console.log(price)
+} else if (userAge > 65) {
+    var price = (total - (total * 0.4) );
+    console.log(price)
+} else {
+    var price = total;
+    console.log(price)
+}
+
+price = Number(price.toFixed(2));
+console.log(price)
+//stampa in html il risultato
+ 
+document.getElementById('prezzo_biglietto').innerHTML = ` Il prezzo del biglietto è ${price} &euro;. Buon Viaggio!`

@@ -9,7 +9,8 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 //chiedo i chilometri da percorrere e ne imposto la variabile
 
 let distanza = prompt( "Perfavore, inserisci i chilometri che vuoi percorrere" );
-console.log(distanza)
+// converto stringa in numero
+distanza = Number(distanza);
 // controllo che l'informazione sia valida
 if (isNaN(distanza)) {
     alert("Perfavore, inserisci un numero valido");
@@ -21,7 +22,8 @@ if (isNaN(distanza)) {
 //chiedo età del passeggero e ne imposto la variabile
 
 let userAge = prompt ( "Perfavore, inserisci l'età del passeggero" );
-
+// converto stringa in numero
+userAge = Number(userAge);
 // controllo che l'informazione sia valida 
 if (isNaN(userAge)) {
     alert("Perfavore, inserisci un numero valido")
@@ -31,35 +33,33 @@ if (isNaN(userAge)) {
 }
 
 // calcolo il prezzo base del biglietto dati i chilometri
-let total = 0.21 * distanza
+let tax = 0.21
+let total = tax * distanza
 
 // clacolo il prezzo del biglietto secondo le variabili impostate differenziando i casi
 
 //caso in cui ci sia un dato non valido
-
 if (isNaN(userAge)== true || isNaN(distanza)== true) {
     alert ("Informazioni non valide, controlla e ripeti l'operazione");
 //caso minorenne
 } else if (userAge < 18){
-    x = (total - (total * 0.2 ) );
+    total = (total - (total * 0.2 ) );
 //caso over 65
-} else if (userAge > 65) {
-     x = (total - (total * 0.4) );
+} else if (userAge >= 65) {
+     total = (total - (total * 0.4) );
 //tutti gli altri casi 
 } else {
-    x = total;
+    total = total;
 }
-
-let price = x;
 
 //stampa in html il risultato
 
-if (price == undefined ) {
+if (total == undefined ) {
     //stampa messaggio di errore
     document.getElementById('prezzo_biglietto').innerHTML = `OPS. Qualcosa è andato storto. Riprova!`
 } else {
-    //converti stringa in numero
-    price = Number(price.toFixed(2));
+    //arrotonda il numero alla seconda cifra decimale
+    total = total.toFixed(2);
     //stampa prezzo biglietto
-    document.getElementById('prezzo_biglietto').innerHTML = `${price} &euro;` 
+    document.getElementById('prezzo_biglietto').innerHTML = `${total} &euro;` 
 }
